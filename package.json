@@ -1,6 +1,6 @@
 {
   "name": "fis3-ouj",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Front End Integrated Solution for Ouj (Base on FIS3)",
   "main": "fis3-ouj.js",
   "bin": {

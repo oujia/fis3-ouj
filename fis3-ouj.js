@@ -1,4 +1,5 @@
 var fis = module.exports = require('fis3');
+
 fis.require.prefixes.unshift('fis3-ouj');
 fis.cli.name = 'fis3-ouj';
 fis.cli.info = require('./package.json');
@@ -16,13 +17,7 @@ fis.hook('module', {
 });
 
 // widget发布时产出到 /static 目录下
-fis.match('/{widget,component}/**', {
-    isMod : true,
-    release: statics + '/$0' 
-});
-
-// base发布时产出到 /static 目录下
-fis.match('/base/**', {
+fis.match('/{widget,component,statics}/**', {
     isMod : true,
     release: statics + '/$0' 
 });
@@ -51,13 +46,16 @@ fis.match("/doc/**",{
 // });
 
 //合拼公共库
-fis.match('/base/js/{mod,jquery-1.11.3,underscore}.js', {
+fis.match('/statics/js/(**.js)', {
     isMod : false,
-    packTo: statics + '/pkg/base/lib.js'
+    release : statics + '/js/$1'
+}).match('/statics/js/{mod,jquery-1.11.3,underscore}.js', {
+    isMod : false,
+    packTo: statics + '/pkg/lib.js'
 });
 
 //mod.js顺序前移
-fis.match('/base/js/mod.js', {
+fis.match('/statics/js/mod.js', {
     packOrder: -100
 });
 
@@ -66,8 +64,8 @@ fis.match('*.scss', {
     rExt: '.css'
 })
 
-//base样式
-fis.match('/base/sass/(**.scss)', {
+//statics样式
+fis.match('/statics/sass/(**.scss)', {
     useSprite: true,
     postprocessor: fis.plugin('autoprefixer', {
         browsers: ['> 1%', 'last 2 versions'],
@@ -76,8 +74,11 @@ fis.match('/base/sass/(**.scss)', {
     release: statics + '/css/$1'
 });
 
-//base图片合拼
-fis.match(/^\/base\/sass\/(.*\.(png|jpg|gif|jpeg))$/i, {
+//statics图片合拼
+fis.match('/statics/img/(**.{png,jpg,gif,jpeg})', {
+    release: statics + '/img/$1',
+    url: statics + '/img/$1'
+}).match(/^\/statics\/sass\/(.*\.(png|jpg|gif|jpeg))$/i, {
     release: statics + '/img/sprite/$1',
     url: statics + '/img/sprite/$1'
 });

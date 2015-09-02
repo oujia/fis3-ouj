@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var Liftoff = require('liftoff');
 var argv = require('minimist')(process.argv.slice(2));
 var path = require('path');
@@ -25,5 +27,6 @@ cli.launch({
     }
     fis.set('system.localNPMFolder', path.join(env.cwd, 'node_modules/foo'));
     fis.set('system.globalNPMFolder', path.dirname(__dirname));
+    fis.cli.name = this.name;
     fis.cli.run(argv, env);
 });
