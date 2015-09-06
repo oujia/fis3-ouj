@@ -23,6 +23,7 @@
   "homepage": "https://github.com/oujia/fis3-ouj#readme",
   "dependencies": {
     "fis3-hook-module": "^1.2.2",
-    "fis3-postpackager-loader": "^1.3.0"
+    "fis3-postpackager-loader": "^1.3.0",
+    "fis3-spriter-oujsprites": "^0.1.0"
   }
 }
