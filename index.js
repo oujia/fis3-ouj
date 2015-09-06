@@ -30,7 +30,7 @@ module.exports = function(fis, isMount) {
         },
         '/statics/js/{mod,jquery-1.11.3,underscore}.js': {
             isMod : false,
-            packTo: '/${statics}/pkg/lib.js'   
+            packTo: '/${statics}/pkg/lib.js'
         },
         '/statics/js/mod.js': {
             packOrder: -100
@@ -74,8 +74,8 @@ module.exports = function(fis, isMount) {
             postpackager: fis.plugin('loader', {
                 resourceType: 'mod',
                 allInOne: {
-                    js: '/${statics}/pkg/${filepath}.js',
-                    css: '/${statics}/pkg/${filepath}.css'
+                    js: '/' + sets['statics'] + '/pkg/${filepath}.js',
+                    css: '/' + sets['statics'] + '/pkg/${filepath}.css'
                 },
                 useInlineMap: true
             }),
@@ -88,7 +88,7 @@ module.exports = function(fis, isMount) {
     }
     function mount() {
         fis.set('system.localNPMFolder', path.join(__dirname, 'node_modules'));
-        fis.set('project.ignore', ['**.cmd', '**.sh']);
+        fis.set('project.ignore', ['**.cmd', '**.sh', 'fis3-conf.js', 'fis-conf.js']);
 
         fis.util.map(sets, function(key, value) {
             fis.set(key, value);
@@ -102,7 +102,7 @@ module.exports = function(fis, isMount) {
         fis.hook('module', {
             mode: 'commonJs'
         });
-        
+
         // map.json
         // fis.match('::package', {
         //     postpackager: function createMap(ret) {
@@ -113,7 +113,7 @@ module.exports = function(fis, isMount) {
         //         ret.pkg[map.subpath] = map;
         //     }
         // });
-        
+
         fis.media('debug').match('*.{js,css,png}', {
             useHash: false,
             optimizer: null

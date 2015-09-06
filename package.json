@@ -1,8 +1,8 @@
 {
   "name": "fis3-ouj",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Front End Integrated Solution for Ouj (Base on FIS3)",
-  "main": "fis3-ouj.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
