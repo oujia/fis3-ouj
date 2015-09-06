@@ -3,8 +3,8 @@ var path = require('path');
 module.exports = function(fis, isMount) {
     var sets = {
         'namespace': '',
-        'statics': 'static2',
-        'views': 'protected/views2'
+        'statics': fis.get('statics') || 'static2',
+        'views': fis.get('views') || 'protected/views2'
     };
 
     var matchRules = {
@@ -86,6 +86,7 @@ module.exports = function(fis, isMount) {
             })
         }
     }
+
     function mount() {
         fis.set('system.localNPMFolder', path.join(__dirname, 'node_modules'));
         fis.set('project.ignore', ['**.cmd', '**.sh', 'fis3-conf.js', 'fis-conf.js']);
