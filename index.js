@@ -80,7 +80,7 @@ module.exports = function(fis, isMount) {
                 useInlineMap: true
             }),
             //合拼图片
-            spriter: fis.plugin('oujsprites', {
+            spriter: fis.plugin('csssprites-ouj', {
                 scale : 1,
                 margin: 10
             })
