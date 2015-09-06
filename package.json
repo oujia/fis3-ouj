@@ -1,6 +1,6 @@
 {
   "name": "fis3-ouj",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "description": "Front End Integrated Solution for Ouj (Base on FIS3)",
   "main": "index.js",
   "scripts": {
@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/oujia/fis3-ouj#readme",
   "dependencies": {
+    "fis-spriter-csssprites-ouj": "^0.3.0",
     "fis3-hook-module": "^1.2.2",
-    "fis3-postpackager-loader": "^1.3.0",
-    "fis3-spriter-oujsprites": "^0.1.0"
+    "fis3-postpackager-loader": "^1.3.0"
   }
 }
