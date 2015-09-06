@@ -1,6 +1,6 @@
 {
   "name": "fis3-ouj",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Front End Integrated Solution for Ouj (Base on FIS3)",
   "main": "index.js",
   "scripts": {
