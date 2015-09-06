@@ -23,6 +23,7 @@ fis.require('ouj')(fis);
 ```
 
 **目录结构**
+
 component目录 [参考component规范](https://github.com/componentjs/component)
 
 ```
