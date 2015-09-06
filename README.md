@@ -23,6 +23,8 @@ fis.require('ouj')(fis);
 ```
 
 **目录结构**
+component目录 [参考component规范](https://github.com/componentjs/component)
+
 ```
 site
  ├── widget  #组件的资源目录
@@ -46,7 +48,7 @@ site
  │     ├── sass
  │     └── img
  │
- ├── component  #JS组件，CSS组件， [参考component规范](https://github.com/componentjs/component) 
+ ├── component  #JS组件，CSS组件， [参考component规范] 
  ├── test   #测试相关目录
  ├── fis-conf.js  #配置文件
  ├── debug.sh  #开发环境执行命令
